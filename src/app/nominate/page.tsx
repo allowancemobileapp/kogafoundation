@@ -3,6 +3,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -13,6 +14,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { NominationSchema, type NominationFormValues } from "@/lib/schemas";
 
 export default function NominatePage() {
+  const router = useRouter();
   const form = useForm<NominationFormValues>({
     resolver: zodResolver(NominationSchema),
     defaultValues: {
@@ -22,6 +24,7 @@ export default function NominatePage() {
       nomineeName: "",
       nomineeOrg: "",
       nomineeRole: "",
+      awardCategory: undefined,
       statement: "",
     },
   });
@@ -45,6 +48,7 @@ Category: ${values.awardCategory}
 ${values.statement}`;
     const encodedText = encodeURIComponent(text);
     window.open(`https://wa.me/${whatsAppNumber}?text=${encodedText}`, '_blank');
+    router.push('/thank-you');
   }
 
   return (

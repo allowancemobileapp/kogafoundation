@@ -3,6 +3,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,6 +13,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { ElderInductionSchema, type ElderInductionFormValues } from "@/lib/schemas";
 
 export default function ElderInductionPage() {
+  const router = useRouter();
   const form = useForm<ElderInductionFormValues>({
     resolver: zodResolver(ElderInductionSchema),
     defaultValues: {
@@ -19,7 +21,7 @@ export default function ElderInductionPage() {
       candidateContact: "",
       candidateChurch: "",
       bio: "",
-      candidateAge: undefined,
+      candidateAge: 0,
     },
   });
 
@@ -36,6 +38,7 @@ Bio: ${values.bio}
 Amount: ₦75,000`;
     const encodedText = encodeURIComponent(text);
     window.open(`https://wa.me/${whatsAppNumber}?text=${encodedText}`, '_blank');
+    router.push('/thank-you');
   }
 
   return (

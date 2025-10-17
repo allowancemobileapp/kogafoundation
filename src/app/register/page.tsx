@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,6 +15,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { RegistrationSchema, type RegistrationFormValues } from "@/lib/schemas";
 
 export default function RegisterPage() {
+  const router = useRouter();
   const form = useForm<RegistrationFormValues>({
     resolver: zodResolver(RegistrationSchema),
     defaultValues: {
@@ -21,6 +23,7 @@ export default function RegisterPage() {
       email: "",
       phone: "",
       organization: "",
+      role: undefined,
       promoCode: "",
       terms: false,
     },
@@ -40,6 +43,7 @@ Promo Code: ${values.promoCode || 'N/A'}
 Amount: ₦10,000`;
     const encodedText = encodeURIComponent(text);
     window.open(`https://wa.me/${whatsAppNumber}?text=${encodedText}`, '_blank');
+    router.push('/thank-you');
   }
 
   return (

@@ -2,6 +2,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -11,6 +12,7 @@ import { ADDRESSES, CONFERENCE_DETAILS } from "@/lib/constants";
 import { Mail, Phone } from "lucide-react";
 
 export default function ContactPage() {
+  const router = useRouter();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -21,6 +23,7 @@ export default function ContactPage() {
     const text = `Contact Form Inquiry:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
     const encodedText = encodeURIComponent(text);
     window.open(`https://wa.me/${whatsAppNumber}?text=${encodedText}`, '_blank');
+    router.push('/thank-you');
   };
 
   return (
