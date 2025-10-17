@@ -13,8 +13,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
             <Link href="/" className="flex items-center space-x-2">
-              <Logo className="h-8 w-8" />
-              <span className="text-lg font-bold font-headline">KOGA Faith Foundation</span>
+              <Logo />
+              <span className="text-lg font-bold font-headline sr-only">KOGA Faith Foundation</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               {CONFERENCE_DETAILS.subheadline}

@@ -28,8 +28,8 @@ export function Header() {
       <div className="container flex h-14 max-w-screen-2xl items-center px-4 md:px-8">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Logo className="h-8 w-8" />
-            <span className="hidden font-bold sm:inline-block font-headline">
+            <Logo />
+            <span className="hidden font-bold sm:inline-block font-headline sr-only">
               KOGA Events
             </span>
           </Link>
@@ -72,8 +72,8 @@ export function Header() {
                 className="mr-6 flex items-center space-x-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Logo className="h-8 w-8" />
-                <span className="font-bold font-headline">KOGA Events</span>
+                <Logo />
+                <span className="font-bold font-headline sr-only">KOGA Events</span>
               </Link>
               <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
                 <div className="flex flex-col space-y-3">
