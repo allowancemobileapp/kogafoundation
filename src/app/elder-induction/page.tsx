@@ -19,6 +19,7 @@ export default function ElderInductionPage() {
       candidateContact: "",
       candidateChurch: "",
       bio: "",
+      candidateAge: undefined,
     },
   });
 
@@ -65,7 +66,7 @@ Amount: ₦75,000`;
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Age</FormLabel>
-                      <FormControl><Input type="number" min="50" placeholder="50 or older" {...field} /></FormControl>
+                      <FormControl><Input type="number" min="50" placeholder="50 or older" {...field} onChange={event => field.onChange(+event.target.value)} /></FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
