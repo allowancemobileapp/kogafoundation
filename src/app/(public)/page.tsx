@@ -1,0 +1,199 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight, Calendar, Landmark, Mic, Milestone, Star, Users } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { CONFERENCE_DETAILS } from '@/lib/constants';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+
+const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
+const elderImage = PlaceHolderImages.find(p => p.id === 'elder-induction');
+const awardsImage = PlaceHolderImages.find(p => p.id === 'awards');
+const ceremonyImage = PlaceHolderImages.find(p => p.id === 'ceremony');
+const partnerLogos = PlaceHolderImages.filter(p => p.id.startsWith('partner-logo'));
+
+const whyAttend = [
+  {
+    icon: Users,
+    text: 'Network with faith leaders, women, and youth.',
+  },
+  {
+    icon: Mic,
+    text: 'Gain insights from influential speakers and experts.',
+  },
+  {
+    icon: Star,
+    text: 'Celebrate excellence in faith-based initiatives.',
+  },
+  {
+    icon: Landmark,
+    text: 'Engage in discussions on socio-economic development.',
+  },
+];
+
+const features = [
+  {
+    title: 'Kingdom Elderstateswomen Hall of Faith Induction',
+    description: 'Honoring the matriarchs of faith for their lifelong service.',
+    fee: 'Fee ₦75,000',
+    image: elderImage,
+    link: '/elder-induction',
+  },
+  {
+    title: 'Awards for Faith-Based Initiatives',
+    description: 'Recognizing outstanding contributions to community and society.',
+    fee: 'Nomination Free',
+    image: awardsImage,
+    link: '/nominate',
+  },
+  {
+    title: 'Defining Ceremony',
+    description: 'The National Council for Faith-Based Women and Youths Initiatives.',
+    fee: 'Included with registration',
+    image: ceremonyImage,
+    link: '/agenda',
+  },
+];
+
+export default function HomePage() {
+  return (
+    <div className="flex flex-col">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] min-h-[500px] w-full">
+        {heroImage && (
+          <Image
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
+            data-ai-hint={heroImage.imageHint}
+            fill
+            className="object-cover"
+            priority
+          />
+        )}
+        <div className="absolute inset-0 bg-primary/80" />
+        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
+          <div className="container">
+            <h1 className="text-4xl font-extrabold tracking-tight font-headline md:text-5xl lg:text-6xl">
+              {CONFERENCE_DETAILS.name}
+            </h1>
+            <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-primary-foreground/80">
+              {CONFERENCE_DETAILS.subheadline}
+            </p>
+            <div className="mt-6 flex items-center justify-center space-x-2 text-sm font-semibold">
+              <div className="flex items-center space-x-2 rounded-full bg-background/10 px-4 py-2">
+                <Calendar className="h-4 w-4" />
+                <span>{CONFERENCE_DETAILS.date} - {CONFERENCE_DETAILS.time}</span>
+              </div>
+              <div className="flex items-center space-x-2 rounded-full bg-background/10 px-4 py-2">
+                <Milestone className="h-4 w-4" />
+                <span>{CONFERENCE_DETAILS.venue}</span>
+              </div>
+            </div>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <Link href="/register">Register Now</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="border-accent text-accent hover:bg-accent/10">
+                <Link href="/nominate">Nominate Someone</Link>
+              </Button>
+            </div>
+            <p className="mt-6 text-sm">
+              Questions? Call us at <a href={`tel:${CONFERENCE_DETAILS.contactPhone}`} className="font-bold underline hover:text-accent">{CONFERENCE_DETAILS.contactPhone}</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Attend Section */}
+      <section className="py-16 sm:py-24 bg-secondary">
+        <div className="container">
+          <h2 className="text-3xl font-bold text-center font-headline">Why You Should Attend</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
+            Join us for a transformative experience designed to inspire, equip, and connect leaders for greater impact.
+          </p>
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {whyAttend.map((item, index) => (
+              <div key={index} className="text-center">
+                <div className="flex items-center justify-center mx-auto h-12 w-12 rounded-full bg-primary text-primary-foreground">
+                  <item.icon className="h-6 w-6" />
+                </div>
+                <p className="mt-4 text-lg font-medium">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Special Features Section */}
+      <section className="py-16 sm:py-24">
+        <div className="container">
+          <h2 className="text-3xl font-bold text-center font-headline">Special Features</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
+            Explore the unique opportunities and ceremonies at this year&apos;s conference.
+          </p>
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature) => (
+              <Card key={feature.title} className="overflow-hidden flex flex-col group">
+                {feature.image && (
+                  <div className="aspect-w-16 aspect-h-9 overflow-hidden">
+                    <Image
+                      src={feature.image.imageUrl}
+                      alt={feature.image.description}
+                      data-ai-hint={feature.image.imageHint}
+                      width={600}
+                      height={400}
+                      className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                )}
+                <CardHeader>
+                  <CardTitle className="font-headline">{feature.title}</CardTitle>
+                  <CardDescription>{feature.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col justify-end">
+                    <div className="flex justify-between items-center mt-4">
+                        <span className="text-sm font-semibold text-primary">{feature.fee}</span>
+                        <Link href={feature.link} className="text-sm font-semibold text-accent hover:text-accent/80 flex items-center">
+                            Learn More <ArrowRight className="ml-1 h-4 w-4"/>
+                        </Link>
+                    </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="py-16 sm:py-24 bg-secondary">
+        <div className="container">
+          <h2 className="text-3xl font-bold text-center font-headline">Our Trusted Partners & Sponsors</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
+            We are grateful for the support of our partners who make this event possible.
+          </p>
+          <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-5 items-center">
+            {partnerLogos.map((logo, index) => (
+              <div key={index} className="flex justify-center">
+                {logo && (
+                  <Image
+                    src={logo.imageUrl}
+                    alt={logo.description}
+                    data-ai-hint={logo.imageHint}
+                    width={158}
+                    height={48}
+                    className="object-contain"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Button variant="outline" asChild>
+              <Link href="/partners">Become a Partner</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

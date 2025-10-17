@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A diverse group of people at a conference, smiling and networking, with a teal and gold color overlay.",
+      "imageUrl": "https://picsum.photos/seed/koga-hero/1200/800",
+      "imageHint": "conference networking"
+    },
+    {
+      "id": "elder-induction",
+      "description": "Portrait of a dignified elderly woman with a gentle smile.",
+      "imageUrl": "https://picsum.photos/seed/koga-elder/600/400",
+      "imageHint": "dignified woman"
+    },
+    {
+      "id": "awards",
+      "description": "A close-up of a gleaming golden trophy against a dark background.",
+      "imageUrl": "https://picsum.photos/seed/koga-award/600/400",
+      "imageHint": "gold trophy"
+    },
+    {
+      "id": "ceremony",
+      "description": "A speaker on a brightly lit stage addressing a large audience at a formal event.",
+      "imageUrl": "https://picsum.photos/seed/koga-ceremony/600/400",
+      "imageHint": "speaker stage"
+    },
+    {
+      "id": "partner-logo-1",
+      "description": "Placeholder for a partner logo.",
+      "imageUrl": "https://picsum.photos/seed/koga-p1/200/100",
+      "imageHint": "logo"
+    },
+    {
+      "id": "partner-logo-2",
+      "description": "Placeholder for a partner logo.",
+      "imageUrl": "https://picsum.photos/seed/koga-p2/200/100",
+      "imageHint": "logo"
+    },
+    {
+      "id": "partner-logo-3",
+      "description": "Placeholder for a partner logo.",
+      "imageUrl": "https://picsum.photos/seed/koga-p3/200/100",
+      "imageHint": "logo"
+    },
+    {
+      "id": "partner-logo-4",
+      "description": "Placeholder for a partner logo.",
+      "imageUrl": "https://picsum.photos/seed/koga-p4/200/100",
+      "imageHint": "logo"
+    },
+    {
+      "id": "partner-logo-5",
+      "description": "Placeholder for a partner logo.",
+      "imageUrl": "https://picsum.photos/seed/koga-p5/200/100",
+      "imageHint": "logo"
+    }
+  ]
 }
