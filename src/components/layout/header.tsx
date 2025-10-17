@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -29,7 +30,7 @@ export function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Logo className="h-8 w-8" />
             <span className="hidden font-bold sm:inline-block font-headline">
-              KOGA Conference
+              KOGA Events
             </span>
           </Link>
           <nav className="hidden items-center gap-6 text-sm md:flex">
@@ -72,7 +73,7 @@ export function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Logo className="h-8 w-8" />
-                <span className="font-bold font-headline">KOGA Conference</span>
+                <span className="font-bold font-headline">KOGA Events</span>
               </Link>
               <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
                 <div className="flex flex-col space-y-3">
