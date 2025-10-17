@@ -72,7 +72,7 @@ export default function HomePage() {
         )}
         <div className="absolute inset-0 bg-primary/80" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
-          <div className="container">
+          <div className="container px-4 md:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight font-headline md:text-5xl lg:text-6xl">
               {CONFERENCE_DETAILS.name}
             </h1>
@@ -106,7 +106,7 @@ export default function HomePage() {
 
       {/* Why Attend Section */}
       <section className="py-16 sm:py-24 bg-secondary">
-        <div className="container">
+        <div className="container px-4 md:px-8">
           <h2 className="text-3xl font-bold text-center font-headline">Why You Should Attend</h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
             Join us for a transformative experience designed to inspire, equip, and connect leaders for greater impact.
@@ -126,7 +126,7 @@ export default function HomePage() {
       
       {/* Special Features Section */}
       <section className="py-16 sm:py-24">
-        <div className="container">
+        <div className="container px-4 md:px-8">
           <h2 className="text-3xl font-bold text-center font-headline">Special Features</h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
             Explore the unique opportunities and ceremonies at this year&apos;s conference.
@@ -166,7 +166,7 @@ export default function HomePage() {
 
       {/* Partners Section */}
       <section className="py-16 sm:py-24 bg-secondary">
-        <div className="container">
+        <div className="container px-4 md:px-8">
           <h2 className="text-3xl font-bold text-center font-headline">Our Trusted Partners & Sponsors</h2>
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
             We are grateful for the support of our partners who make this event possible.

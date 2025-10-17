@@ -15,7 +15,7 @@ const agendaItems = [
 
 export default function AgendaPage() {
   return (
-    <div className="container py-12 md:py-20">
+    <div className="container py-12 md:py-20 px-4 md:px-8">
       <h1 className="text-4xl font-extrabold tracking-tight text-center font-headline lg:text-5xl">
         Conference Agenda
       </h1>

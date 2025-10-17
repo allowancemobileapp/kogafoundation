@@ -9,7 +9,7 @@ import { ADDRESSES, CONFERENCE_DETAILS, SOCIAL_LINKS } from '@/lib/constants';
 export function Footer() {
   return (
     <footer className="bg-card text-card-foreground">
-      <div className="container py-12">
+      <div className="container py-12 px-4 md:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
             <Link href="/" className="flex items-center space-x-2">

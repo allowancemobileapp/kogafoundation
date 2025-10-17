@@ -54,7 +54,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="container py-12 md:py-20 flex justify-center">
+    <div className="container py-12 md:py-20 flex justify-center px-4 md:px-8">
       <Card className="w-full max-w-2xl">
         <CardHeader>
           <CardTitle className="text-2xl font-headline">Conference Registration</CardTitle>

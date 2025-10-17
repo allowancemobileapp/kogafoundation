@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export default function ThankYouPage() {
   return (
-    <div className="container py-12 md:py-20 flex items-center justify-center">
+    <div className="container py-12 md:py-20 flex items-center justify-center px-4 md:px-8">
       <Card className="w-full max-w-lg text-center">
         <CardHeader>
           <div className="mx-auto bg-green-100 rounded-full p-3 w-fit">
