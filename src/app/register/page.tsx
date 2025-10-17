@@ -4,8 +4,6 @@
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
-import { useTransition } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -13,15 +11,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
 import { RegistrationSchema, type RegistrationFormValues } from "@/lib/schemas";
-import { registerAction } from "../actions/registration";
 
 export default function RegisterPage() {
-  const router = useRouter();
-  const { toast } = useToast();
-  const [isPending, startTransition] = useTransition();
-
   const form = useForm<RegistrationFormValues>({
     resolver: zodResolver(RegistrationSchema),
     defaultValues: {
@@ -35,22 +27,19 @@ export default function RegisterPage() {
   });
 
   function onSubmit(values: RegistrationFormValues) {
-    startTransition(async () => {
-      const result = await registerAction(values);
-      if (result.success) {
-        toast({
-          title: "Registration Submitted!",
-          description: "You will be redirected to the confirmation page shortly.",
-        });
-        router.push('/thank-you');
-      } else {
-        toast({
-          variant: "destructive",
-          title: "An error occurred",
-          description: result.error,
-        });
-      }
-    });
+    const whatsAppNumber = "2349023567833";
+    const text = `Conference Registration:
+
+Name: ${values.name}
+Email: ${values.email}
+Phone: ${values.phone}
+Organization: ${values.organization || 'N/A'}
+Role: ${values.role}
+Promo Code: ${values.promoCode || 'N/A'}
+
+Amount: ₦10,000`;
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/${whatsAppNumber}?text=${encodedText}`, '_blank');
   }
 
   return (
@@ -175,8 +164,8 @@ export default function RegisterPage() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" disabled={isPending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                {isPending ? 'Submitting...' : 'Proceed to Payment (₦10,000)'}
+              <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                Register via WhatsApp (₦10,000)
               </Button>
             </form>
           </Form>

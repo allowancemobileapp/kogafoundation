@@ -3,8 +3,6 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
-import { useTransition } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,15 +10,9 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
 import { NominationSchema, type NominationFormValues } from "@/lib/schemas";
-import { nominateAction } from "../actions/nomination";
 
 export default function NominatePage() {
-  const router = useRouter();
-  const { toast } = useToast();
-  const [isPending, startTransition] = useTransition();
-
   const form = useForm<NominationFormValues>({
     resolver: zodResolver(NominationSchema),
     defaultValues: {
@@ -35,22 +27,24 @@ export default function NominatePage() {
   });
 
   function onSubmit(values: NominationFormValues) {
-    startTransition(async () => {
-      const result = await nominateAction(values);
-      if (result.success) {
-        toast({
-          title: "Nomination Submitted!",
-          description: "Thank you for your submission. We will be in touch.",
-        });
-        router.push('/thank-you');
-      } else {
-        toast({
-          variant: "destructive",
-          title: "An error occurred",
-          description: result.error,
-        });
-      }
-    });
+    const whatsAppNumber = "2349023567833";
+    const text = `New Award Nomination:
+
+--- Your Information ---
+Name: ${values.nominatorName}
+Email: ${values.nominatorEmail}
+Phone: ${values.nominatorPhone}
+
+--- Nominee Information ---
+Name: ${values.nomineeName}
+Organization: ${values.nomineeOrg || 'N/A'}
+Role: ${values.nomineeRole || 'N/A'}
+Category: ${values.awardCategory}
+
+--- Statement ---
+${values.statement}`;
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/${whatsAppNumber}?text=${encodedText}`, '_blank');
   }
 
   return (
@@ -175,12 +169,12 @@ export default function NominatePage() {
 
               <div className="space-y-2">
                 <FormLabel>Supporting Documents (Optional)</FormLabel>
-                <FormControl><Input id="documents" type="file" /></FormControl>
+                <FormControl><Input id="documents" type="file" disabled /></FormControl>
                 <p className="text-xs text-muted-foreground">You can upload files like PDFs, images, or documents. File uploads are not yet enabled.</p>
               </div>
 
-              <Button type="submit" disabled={isPending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                {isPending ? 'Submitting...' : 'Submit Nomination'}
+              <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                Submit Nomination via WhatsApp
               </Button>
             </form>
           </Form>

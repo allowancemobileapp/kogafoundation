@@ -3,23 +3,15 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
-import { useTransition } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
 import { ElderInductionSchema, type ElderInductionFormValues } from "@/lib/schemas";
-import { inductAction } from "../actions/induction";
 
 export default function ElderInductionPage() {
-  const router = useRouter();
-  const { toast } = useToast();
-  const [isPending, startTransition] = useTransition();
-
   const form = useForm<ElderInductionFormValues>({
     resolver: zodResolver(ElderInductionSchema),
     defaultValues: {
@@ -31,22 +23,18 @@ export default function ElderInductionPage() {
   });
 
   function onSubmit(values: ElderInductionFormValues) {
-    startTransition(async () => {
-      const result = await inductAction(values);
-      if (result.success) {
-        toast({
-          title: "Application Submitted!",
-          description: "You will be redirected to the confirmation page shortly.",
-        });
-        router.push('/thank-you');
-      } else {
-        toast({
-          variant: "destructive",
-          title: "An error occurred",
-          description: result.error,
-        });
-      }
-    });
+    const whatsAppNumber = "2349023567833";
+    const text = `Elderstateswomen Induction Application:
+
+Candidate Name: ${values.candidateName}
+Age: ${values.candidateAge}
+Contact Phone: ${values.candidateContact}
+Church/Ministry: ${values.candidateChurch}
+Bio: ${values.bio}
+
+Amount: ₦75,000`;
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/${whatsAppNumber}?text=${encodedText}`, '_blank');
   }
 
   return (
@@ -116,8 +104,8 @@ export default function ElderInductionPage() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" disabled={isPending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                {isPending ? 'Submitting...' : 'Proceed to Payment (₦75,000)'}
+              <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                Apply via WhatsApp (₦75,000)
               </Button>
             </form>
           </Form>
