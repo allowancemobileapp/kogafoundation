@@ -3,55 +3,79 @@
     {
       "id": "hero",
       "description": "A diverse group of people at a conference, smiling and networking, with a teal and gold color overlay.",
-      "imageUrl": "https://picsum.photos/seed/koga-hero/1200/800",
+      "imageUrl": "https://images.unsplash.com/photo-1531058020387-3be344556be6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb25mZXJlbmNlJTIwbmV0d29ya2luZ3xlbnwwfHx8fDE3NjA3MzM2NjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "conference networking"
     },
     {
       "id": "elder-induction",
       "description": "Portrait of a dignified elderly woman with a gentle smile.",
-      "imageUrl": "https://picsum.photos/seed/koga-elder/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1664898548090-2129c7aeea43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkaWduaWZpZWQlMjB3b21hbnxlbnwwfHx8fDE3NjA3MzM2NjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "dignified woman"
     },
     {
       "id": "awards",
       "description": "A close-up of a gleaming golden trophy against a dark background.",
-      "imageUrl": "https://picsum.photos/seed/koga-award/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1633785584922-503ad0e982f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxnb2xkJTIwdHJvcGh5fGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "gold trophy"
     },
     {
-      "id": "ceremony",
+      "id": "ceremony-1",
       "description": "A speaker on a brightly lit stage addressing a large audience at a formal event.",
-      "imageUrl": "https://picsum.photos/seed/koga-ceremony/600/400",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/907695.jpg",
+      "imageHint": "speaker stage"
+    },
+    {
+      "id": "ceremony-2",
+      "description": "A speaker on a brightly lit stage addressing a large audience at a formal event.",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/907716.jpg",
+      "imageHint": "speaker stage"
+    },
+    {
+      "id": "ceremony-3",
+      "description": "A speaker on a brightly lit stage addressing a large audience at a formal event.",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/907714.jpg",
+      "imageHint": "speaker stage"
+    },
+    {
+      "id": "ceremony-4",
+      "description": "A speaker on a brightly lit stage addressing a large audience at a formal event.",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/907700.jpg",
+      "imageHint": "speaker stage"
+    },
+    {
+      "id": "ceremony-5",
+      "description": "A speaker on a brightly lit stage addressing a large audience at a formal event.",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/907695.jpg",
       "imageHint": "speaker stage"
     },
     {
       "id": "partner-logo-1",
       "description": "Placeholder for a partner logo.",
-      "imageUrl": "https://picsum.photos/seed/koga-p1/200/100",
+      "imageUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb2dvfGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "logo"
     },
     {
       "id": "partner-logo-2",
       "description": "Placeholder for a partner logo.",
-      "imageUrl": "https://picsum.photos/seed/koga-p2/200/100",
+      "imageUrl": "https://images.unsplash.com/photo-1545231027-637d2f6210f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsb2dvfGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "logo"
     },
     {
       "id": "partner-logo-3",
       "description": "Placeholder for a partner logo.",
-      "imageUrl": "https://picsum.photos/seed/koga-p3/200/100",
+      "imageUrl": "https://images.unsplash.com/photo-1612810806563-4cb8265db55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxsb2dvfGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "logo"
     },
     {
       "id": "partner-logo-4",
       "description": "Placeholder for a partner logo.",
-      "imageUrl": "https://picsum.photos/seed/koga-p4/200/100",
+      "imageUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb2dvfGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "logo"
     },
     {
       "id": "partner-logo-5",
       "description": "Placeholder for a partner logo.",
-      "imageUrl": "https://picsum.photos/seed/koga-p5/200/100",
+      "imageUrl": "https://images.unsplash.com/photo-1545231027-637d2f6210f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsb2dvfGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "logo"
     }
   ]

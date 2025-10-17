@@ -5,12 +5,39 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CONFERENCE_DETAILS } from '@/lib/constants';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
 const elderImage = PlaceHolderImages.find(p => p.id === 'elder-induction');
 const awardsImage = PlaceHolderImages.find(p => p.id === 'awards');
-const ceremonyImage = PlaceHolderImages.find(p => p.id === 'ceremony');
-const partnerLogos = PlaceHolderImages.filter(p => p.id.startsWith('partner-logo'));
+const ceremonyImages = PlaceHolderImages.filter(p => p.id.startsWith('ceremony-'));
+
+const features = [
+  {
+    title: 'Kingdom Elderstateswomen Hall of Faith Induction',
+    description: 'Honoring the matriarchs of faith for their lifelong service.',
+    fee: 'Fee ₦75,000',
+    image: elderImage,
+    images: [],
+    link: '/elder-induction',
+  },
+  {
+    title: 'Awards for Faith-Based Initiatives',
+    description: 'Recognizing outstanding contributions to community and society.',
+    fee: 'Nomination Free',
+    image: awardsImage,
+    images: [],
+    link: '/nominate',
+  },
+  {
+    title: 'Defining Ceremony',
+    description: 'The National Council for Faith-Based Women and Youths Initiatives.',
+    fee: 'Included with registration',
+    image: null,
+    images: ceremonyImages,
+    link: '/agenda',
+  },
+];
 
 const whyAttend = [
   {
@@ -31,29 +58,7 @@ const whyAttend = [
   },
 ];
 
-const features = [
-  {
-    title: 'Kingdom Elderstateswomen Hall of Faith Induction',
-    description: 'Honoring the matriarchs of faith for their lifelong service.',
-    fee: 'Fee ₦75,000',
-    image: elderImage,
-    link: '/elder-induction',
-  },
-  {
-    title: 'Awards for Faith-Based Initiatives',
-    description: 'Recognizing outstanding contributions to community and society.',
-    fee: 'Nomination Free',
-    image: awardsImage,
-    link: '/nominate',
-  },
-  {
-    title: 'Defining Ceremony',
-    description: 'The National Council for Faith-Based Women and Youths Initiatives.',
-    fee: 'Included with registration',
-    image: ceremonyImage,
-    link: '/agenda',
-  },
-];
+const partnerLogos = PlaceHolderImages.filter(p => p.id.startsWith('partner-logo'));
 
 export default function HomePage() {
   return (
@@ -145,6 +150,28 @@ export default function HomePage() {
                       className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
+                )}
+                 {feature.images && feature.images.length > 0 && (
+                   <Carousel className="w-full relative">
+                      <CarouselContent>
+                        {feature.images.map((img, index) => (
+                          <CarouselItem key={index}>
+                             <div className="aspect-w-16 aspect-h-9 overflow-hidden">
+                                <Image
+                                  src={img.imageUrl}
+                                  alt={img.description}
+                                  data-ai-hint={img.imageHint}
+                                  width={600}
+                                  height={400}
+                                  className="object-cover w-full h-full"
+                                />
+                              </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
+                      <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
+                    </Carousel>
                 )}
                 <CardHeader>
                   <CardTitle className="font-headline">{feature.title}</CardTitle>
