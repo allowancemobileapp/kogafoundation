@@ -58,7 +58,7 @@ export default function RegisterPage() {
       <Card className="w-full max-w-2xl">
         <CardHeader>
           <CardTitle className="text-2xl font-headline">Conference Registration</CardTitle>
-          <CardDescription>Fee: ₦10,000. Complete the form below to secure your spot.</CardDescription>
+          <CardDescription>Registration is open to men, women, and youths across all denominations. Fee: ₦10,000.</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -133,6 +133,9 @@ export default function RegisterPage() {
                         <SelectItem value="attendee">Attendee</SelectItem>
                         <SelectItem value="speaker">Speaker</SelectItem>
                         <SelectItem value="volunteer">Volunteer</SelectItem>
+                        <SelectItem value="leader">Faith Leader</SelectItem>
+                        <SelectItem value="youth">Youth Member</SelectItem>
+                        <SelectItem value="woman">Woman Leader</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -173,7 +176,7 @@ export default function RegisterPage() {
                 )}
               />
               <Button type="submit" disabled={isPending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                {isPending ? 'Submitting...' : 'Proceed to Payment'}
+                {isPending ? 'Submitting...' : 'Proceed to Payment (₦10,000)'}
               </Button>
             </form>
           </Form>

@@ -6,7 +6,7 @@ export const RegistrationSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email address.' }),
   phone: z.string().min(10, { message: 'Please enter a valid phone number.' }),
   organization: z.string().optional(),
-  role: z.enum(['attendee', 'speaker', 'volunteer'], { required_error: 'Please select a role.' }),
+  role: z.enum(['attendee', 'speaker', 'volunteer', 'leader', 'youth', 'woman'], { required_error: 'Please select a role.' }),
   promoCode: z.string().optional(),
   terms: z.literal(true, {
     errorMap: () => ({ message: 'You must accept the terms and conditions.' }),

@@ -54,7 +54,7 @@ export default function ElderInductionPage() {
       <Card className="w-full max-w-2xl">
         <CardHeader>
           <CardTitle className="text-2xl font-headline">Elderstateswomen Hall of Faith Induction</CardTitle>
-          <CardDescription>Induction Fee: ₦75,000. Candidates must be 50 years or older.</CardDescription>
+          <CardDescription>Induction Fee: ₦75,000. Candidates must be 50 years or older. This is a special feature of the State Conference.</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -117,7 +117,7 @@ export default function ElderInductionPage() {
                 )}
               />
               <Button type="submit" disabled={isPending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                {isPending ? 'Submitting...' : 'Proceed to Payment'}
+                {isPending ? 'Submitting...' : 'Proceed to Payment (₦75,000)'}
               </Button>
             </form>
           </Form>
