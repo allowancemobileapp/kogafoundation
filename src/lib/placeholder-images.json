@@ -49,33 +49,27 @@
       "imageHint": "speaker stage"
     },
     {
-      "id": "partner-logo-1",
-      "description": "Placeholder for a partner logo.",
-      "imageUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb2dvfGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "id": "partner-logo-koga",
+      "description": "KOGA Faith Foundation",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/WhatsApp%20Image%202025-10-17%20at%2021.58.42_31fee5fe.jpg",
       "imageHint": "logo"
     },
     {
-      "id": "partner-logo-2",
-      "description": "Placeholder for a partner logo.",
-      "imageUrl": "https://images.unsplash.com/photo-1545231027-637d2f6210f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsb2dvfGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "id": "partner-logo-washington",
+      "description": "Washington State USA",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/WhatsApp%20Image%202025-10-17%20at%2022.30.36_8b27c2d4.jpg",
       "imageHint": "logo"
     },
     {
-      "id": "partner-logo-3",
-      "description": "Placeholder for a partner logo.",
-      "imageUrl": "https://images.unsplash.com/photo-1612810806563-4cb8265db55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxsb2dvfGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "id": "partner-logo-iffmgo",
+      "description": "International Federation of Female Ministers Groups and Organizations ( IFFMGO)",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/WhatsApp%20Image%202025-10-17%20at%2022.08.43_c75c9d6a.jpg",
       "imageHint": "logo"
     },
     {
-      "id": "partner-logo-4",
-      "description": "Placeholder for a partner logo.",
-      "imageUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb2dvfGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo"
-    },
-    {
-      "id": "partner-logo-5",
-      "description": "Placeholder for a partner logo.",
-      "imageUrl": "https://images.unsplash.com/photo-1545231027-637d2f6210f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsb2dvfGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "id": "partner-logo-mothers",
+      "description": "Mothers of the Nations Global warming Ltd",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/WhatsApp%20Image%202025-10-17%20at%2022.01.51_4ebc0bb8.jpg",
       "imageHint": "logo"
     }
   ]

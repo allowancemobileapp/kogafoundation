@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Calendar, Landmark, Mic, Milestone, Star, Users } from 'lucide-react';
@@ -198,19 +199,21 @@ export default function HomePage() {
           <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
             We are grateful for the support of our partners who make this event possible.
           </p>
-          <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-5 items-center">
-            {partnerLogos.map((logo, index) => (
-              <div key={index} className="flex justify-center">
+          <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-4 items-center">
+            {partnerLogos.map((logo) => (
+              <div key={logo.id} className="flex flex-col items-center justify-center text-center gap-2">
                 {logo && (
-                  <Image
-                    src={logo.imageUrl}
-                    alt={logo.description}
-                    data-ai-hint={logo.imageHint}
-                    width={158}
-                    height={48}
-                    className="object-contain"
-                  />
+                  <div className="relative w-32 h-32">
+                    <Image
+                      src={logo.imageUrl}
+                      alt={logo.description}
+                      data-ai-hint={logo.imageHint}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 )}
+                <p className="text-sm font-medium text-muted-foreground">{logo.description}</p>
               </div>
             ))}
           </div>
