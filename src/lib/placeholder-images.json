@@ -55,12 +55,6 @@
       "imageHint": "speaker stage"
     },
     {
-      "id": "ceremony-5",
-      "description": "A speaker on a brightly lit stage addressing a large audience at a formal event.",
-      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/907695.jpg",
-      "imageHint": "speaker stage"
-    },
-    {
       "id": "partner-logo-koga",
       "description": "KOGA Faith Foundation",
       "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/WhatsApp%20Image%202025-10-17%20at%2021.58.42_31fee5fe.jpg",
@@ -74,7 +68,7 @@
     },
     {
       "id": "partner-logo-iffmgo",
-      "description": "International Federation of Female Ministers Groups and Organizations ( IFFMGO)",
+      "description": "International Federation of Female Ministers Groups and Organizations (IFFMGO)",
       "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/WhatsApp%20Image%202025-10-17%20at%2022.08.43_c75c9d6a.jpg",
       "imageHint": "logo"
     },
