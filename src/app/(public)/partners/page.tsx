@@ -1,25 +1,10 @@
+
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Handshake, Megaphone, Trophy } from "lucide-react";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Link from "next/link";
 
-const partnershipTiers = [
-    {
-        icon: Handshake,
-        title: "Platinum Partner",
-        perks: ["Keynote speaking slot", "Lead branding on all event materials", "Exhibition booth", "Social media campaign"]
-    },
-    {
-        icon: Trophy,
-        title: "Gold Sponsor",
-        perks: ["Branding on specific event segments", "Exhibition booth", "Logo on website and banners"]
-    },
-    {
-        icon: Megaphone,
-        title: "Silver Sponsor",
-        perks: ["Logo placement on event materials", "Mention during the ceremony"]
-    }
-]
+const partnerLogos = PlaceHolderImages.filter(p => p.id.startsWith('partner-logo-'));
 
 export default function PartnersPage() {
   return (
@@ -28,24 +13,23 @@ export default function PartnersPage() {
         Our Partners & Sponsors
       </h1>
       <p className="mt-4 max-w-3xl mx-auto text-center text-lg text-muted-foreground">
-        Collaborate with us to empower faith-based organizations and drive socio-economic change.
+        We are grateful for the support of our partners who make this event possible.
       </p>
       
-      <div className="mt-12 grid gap-8 md:grid-cols-1 lg:grid-cols-3 max-w-6xl mx-auto">
-        {partnershipTiers.map(tier => (
-            <Card key={tier.title} className="flex flex-col">
-                <CardHeader className="items-center text-center">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                        <tier.icon className="h-6 w-6" />
-                    </div>
-                    <CardTitle className="mt-4 font-headline">{tier.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                    <ul className="space-y-2 text-muted-foreground list-disc list-inside">
-                        {tier.perks.map(perk => <li key={perk}>{perk}</li>)}
-                    </ul>
-                </CardContent>
-            </Card>
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {partnerLogos.map(logo => (
+            <div key={logo.id} className="flex flex-col items-center justify-center text-center gap-4 p-4 border rounded-lg">
+                <div className="relative w-40 h-40">
+                    <Image
+                      src={logo.imageUrl}
+                      alt={logo.description}
+                      data-ai-hint={logo.imageHint}
+                      fill
+                      className="object-contain"
+                    />
+                </div>
+                <p className="text-lg font-medium text-foreground">{logo.description}</p>
+            </div>
         ))}
       </div>
 
