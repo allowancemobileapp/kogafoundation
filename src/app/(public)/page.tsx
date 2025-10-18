@@ -9,8 +9,8 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
-const elderImage = PlaceHolderImages.find(p => p.id === 'elder-induction');
-const awardsImage = PlaceHolderImages.find(p => p.id === 'awards');
+const elderImages = PlaceHolderImages.filter(p => p.id.startsWith('elder-induction-'));
+const awardsImages = PlaceHolderImages.filter(p => p.id.startsWith('awards-'));
 const ceremonyImages = PlaceHolderImages.filter(p => p.id.startsWith('ceremony-'));
 
 const features = [
@@ -18,23 +18,20 @@ const features = [
     title: 'Kingdom Elderstateswomen Hall of Faith Induction',
     description: 'Honoring the matriarchs of faith for their lifelong service.',
     fee: 'Fee ₦75,000',
-    image: elderImage,
-    images: [],
+    images: elderImages,
     link: '/elder-induction',
   },
   {
     title: 'Awards for Faith-Based Initiatives',
     description: 'Recognizing outstanding contributions to community and society.',
     fee: 'Nomination Free',
-    image: awardsImage,
-    images: [],
+    images: awardsImages,
     link: '/nominate',
   },
   {
     title: 'Defining Ceremony',
     description: 'The National Council for Faith-Based Women and Youths Initiatives.',
     fee: 'Included with registration',
-    image: null,
     images: ceremonyImages,
     link: '/agenda',
   },
@@ -140,18 +137,6 @@ export default function HomePage() {
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
               <Card key={feature.title} className="overflow-hidden flex flex-col group">
-                {feature.image && (
-                  <div className="aspect-w-16 aspect-h-9 overflow-hidden">
-                    <Image
-                      src={feature.image.imageUrl}
-                      alt={feature.image.description}
-                      data-ai-hint={feature.image.imageHint}
-                      width={600}
-                      height={400}
-                      className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                )}
                  {feature.images && feature.images.length > 0 && (
                    <Carousel className="w-full relative">
                       <CarouselContent>
@@ -164,14 +149,18 @@ export default function HomePage() {
                                   data-ai-hint={img.imageHint}
                                   width={600}
                                   height={400}
-                                  className="object-cover w-full h-full"
+                                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                                 />
                               </div>
                           </CarouselItem>
                         ))}
                       </CarouselContent>
-                      <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
-                      <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
+                      {feature.images.length > 1 && (
+                        <>
+                          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
+                          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
+                        </>
+                      )}
                     </Carousel>
                 )}
                 <CardHeader>

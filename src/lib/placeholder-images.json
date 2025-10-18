@@ -7,15 +7,27 @@
       "imageHint": "conference networking"
     },
     {
-      "id": "elder-induction",
+      "id": "elder-induction-1",
       "description": "Portrait of a dignified elderly woman with a gentle smile.",
-      "imageUrl": "https://images.unsplash.com/photo-1664898548090-2129c7aeea43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkaWduaWZpZWQlMjB3b21hbnxlbnwwfHx8fDE3NjA3MzM2NjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/WhatsApp%20Image%202025-10-17%20at%2021.50.34_a7c461fc.jpg",
       "imageHint": "dignified woman"
     },
     {
-      "id": "awards",
+      "id": "elder-induction-2",
+      "description": "Portrait of a dignified elderly woman with a gentle smile.",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/WhatsApp%20Image%202025-10-17%20at%2021.52.12_bf3375c6.jpg",
+      "imageHint": "dignified woman"
+    },
+    {
+      "id": "awards-1",
       "description": "A close-up of a gleaming golden trophy against a dark background.",
-      "imageUrl": "https://images.unsplash.com/photo-1633785584922-503ad0e982f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxnb2xkJTIwdHJvcGh5fGVufDB8fHx8MTc2MDczMzY2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/WhatsApp%20Image%202025-10-17%20at%2021.55.28_25f4b7f9.jpg",
+      "imageHint": "gold trophy"
+    },
+    {
+      "id": "awards-2",
+      "description": "A close-up of a gleaming golden trophy against a dark background.",
+      "imageUrl": "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/WhatsApp%20Image%202025-10-17%20at%2021.56.15_a57b172d.jpg",
       "imageHint": "gold trophy"
     },
     {
