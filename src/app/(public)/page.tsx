@@ -124,9 +124,6 @@ export default function HomePage() {
                   <Link href="/nominate">Nominate Someone</Link>
                 </Button>
               </div>
-              <p className="mt-6 text-sm">
-                Questions? Call us at <a href={`tel:${CONFERENCE_DETAILS.contactPhone}`} className="font-bold underline hover:text-accent">{CONFERENCE_DETAILS.contactPhone}</a>
-              </p>
             </AnimatedSection>
           </div>
         </div>
