@@ -56,7 +56,7 @@ const whyAttend = [
   },
 ];
 
-const partnerLogos = PlaceHolderImages.filter(p => p.id.startsWith('partner-logo'));
+const partnerLogos = PlaceHolderImages.filter(p => p.id.startsWith('partner-logo-'));
 
 export default function HomePage() {
   return (
