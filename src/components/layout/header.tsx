@@ -24,30 +24,31 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 z-20 w-full bg-transparent text-primary-foreground">
+    <header className="sticky top-0 z-20 w-full border-b bg-background text-foreground">
       <div className="container flex h-14 max-w-screen-2xl items-center px-4 md:px-8">
-        <div className="mr-4 flex items-center">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center space-x-2">
             <Logo />
-            <span className="font-bold sm:inline-block font-headline">
+            <span className="font-bold font-headline">
               KOGA Events
             </span>
           </Link>
-          <nav className="hidden items-center gap-6 text-sm md:flex">
-            {navLinks.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={cn(
-                  'transition-colors hover:text-white',
-                  pathname === href ? 'text-white' : 'text-white/70'
-                )}
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
         </div>
+
+        <nav className="ml-6 hidden items-center gap-6 text-sm md:flex">
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={cn(
+                'transition-colors hover:text-foreground/80',
+                pathname === href ? 'text-foreground' : 'text-foreground/60'
+              )}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
