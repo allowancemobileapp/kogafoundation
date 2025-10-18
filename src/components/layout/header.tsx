@@ -24,7 +24,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="absolute top-0 z-20 w-full bg-transparent text-primary-foreground">
       <div className="container flex h-14 max-w-screen-2xl items-center px-4 md:px-8">
         <div className="mr-4 flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
@@ -39,8 +39,8 @@ export function Header() {
                 key={href}
                 href={href}
                 className={cn(
-                  'transition-colors hover:text-foreground/80',
-                  pathname === href ? 'text-foreground' : 'text-foreground/60'
+                  'transition-colors hover:text-white',
+                  pathname === href ? 'text-white' : 'text-white/70'
                 )}
               >
                 {label}
@@ -50,12 +50,6 @@ export function Header() {
         </div>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <Button asChild className="hidden md:inline-flex" variant="ghost">
-            <Link href="/nominate">Nominate Someone</Link>
-          </Button>
-          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/register">Register Now</Link>
-          </Button>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button
@@ -93,10 +87,26 @@ export function Header() {
                       {label}
                     </Link>
                   ))}
+                   <div className="flex flex-col space-y-2 pt-6">
+                    <Button asChild>
+                        <Link href="/register" onClick={() => setIsMobileMenuOpen(false)}>Register Now</Link>
+                    </Button>
+                    <Button asChild variant="secondary">
+                        <Link href="/nominate" onClick={() => setIsMobileMenuOpen(false)}>Nominate Someone</Link>
+                    </Button>
+                   </div>
                 </div>
               </div>
             </SheetContent>
           </Sheet>
+           <div className="hidden md:flex items-center space-x-2">
+             <Button asChild className="hidden md:inline-flex" variant="ghost">
+                <Link href="/nominate">Nominate Someone</Link>
+            </Button>
+            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <Link href="/register">Register Now</Link>
+            </Button>
+           </div>
         </div>
       </div>
     </header>
