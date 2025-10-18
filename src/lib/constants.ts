@@ -1,3 +1,4 @@
+
 export const CONFERENCE_DETAILS = {
   name: 'State Conference & Awards for Faith-Based Initiatives — Lagos 2025',
   subheadline: 'Sensitizing, Mobilizing, Equipping, and Engaging Faith-Based Organizations for Socio-Economic Development',
@@ -10,8 +11,8 @@ export const CONFERENCE_DETAILS = {
 };
 
 export const ADDRESSES = {
-  usa: '123 Main Street, Anytown, USA',
-  nigeria: '456 Broad Street, Lagos, Nigeria',
+  usa: '522 W RIVERSIDE AVE STE N, Spokane, SPOKANE COUNTY, WA 99201 United States',
+  nigeria: 'The opportunity center, Plot 6 Silverlake Estate Peninsula Gardens, sangotedo, Lekki Epe Express Way',
 };
 
 export const SOCIAL_LINKS = {
