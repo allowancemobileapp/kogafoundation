@@ -1,4 +1,6 @@
 
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Calendar, Landmark, Mic, Milestone, Star, Users } from 'lucide-react';
@@ -7,6 +9,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { CONFERENCE_DETAILS } from '@/lib/constants';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
+import { cn } from '@/lib/utils';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
 const elderImages = PlaceHolderImages.filter(p => p.id.startsWith('elder-induction-'));
@@ -58,6 +62,23 @@ const whyAttend = [
 
 const partnerLogos = PlaceHolderImages.filter(p => p.id.startsWith('partner-logo-'));
 
+const AnimatedSection = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  const { ref, inView } = useScrollAnimation();
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        "transition-all duration-700 ease-out",
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
+
 export default function HomePage() {
   return (
     <div className="flex flex-col">
@@ -73,36 +94,38 @@ export default function HomePage() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-primary/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-primary/80 to-primary/90" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
           <div className="container px-4 md:px-8">
-            <h1 className="text-4xl font-extrabold tracking-tight font-headline md:text-5xl lg:text-6xl">
-              {CONFERENCE_DETAILS.name}
-            </h1>
-            <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-primary-foreground/80">
-              {CONFERENCE_DETAILS.subheadline}
-            </p>
-            <div className="mt-6 flex items-center justify-center space-x-2 text-sm font-semibold">
-              <div className="flex items-center space-x-2 rounded-full bg-background/10 px-4 py-2">
-                <Calendar className="h-4 w-4" />
-                <span>{CONFERENCE_DETAILS.date} - {CONFERENCE_DETAILS.time}</span>
+             <AnimatedSection>
+              <h1 className="text-4xl font-extrabold tracking-tight font-headline md:text-5xl lg:text-6xl">
+                {CONFERENCE_DETAILS.name}
+              </h1>
+              <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-primary-foreground/80">
+                {CONFERENCE_DETAILS.subheadline}
+              </p>
+              <div className="mt-6 flex items-center justify-center space-x-2 text-sm font-semibold">
+                <div className="flex items-center space-x-2 rounded-full bg-background/10 px-4 py-2">
+                  <Calendar className="h-4 w-4" />
+                  <span>{CONFERENCE_DETAILS.date} - {CONFERENCE_DETAILS.time}</span>
+                </div>
+                <div className="flex items-center space-x-2 rounded-full bg-background/10 px-4 py-2">
+                  <Milestone className="h-4 w-4" />
+                  <span>{CONFERENCE_DETAILS.venue}</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-2 rounded-full bg-background/10 px-4 py-2">
-                <Milestone className="h-4 w-4" />
-                <span>{CONFERENCE_DETAILS.venue}</span>
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Link href="/register">Register Now</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="border-accent text-accent hover:bg-accent/10">
+                  <Link href="/nominate">Nominate Someone</Link>
+                </Button>
               </div>
-            </div>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/register">Register Now</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="border-accent text-accent hover:bg-accent/10">
-                <Link href="/nominate">Nominate Someone</Link>
-              </Button>
-            </div>
-            <p className="mt-6 text-sm">
-              Questions? Call us at <a href={`tel:${CONFERENCE_DETAILS.contactPhone}`} className="font-bold underline hover:text-accent">{CONFERENCE_DETAILS.contactPhone}</a>
-            </p>
+              <p className="mt-6 text-sm">
+                Questions? Call us at <a href={`tel:${CONFERENCE_DETAILS.contactPhone}`} className="font-bold underline hover:text-accent">{CONFERENCE_DETAILS.contactPhone}</a>
+              </p>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -110,18 +133,22 @@ export default function HomePage() {
       {/* Why Attend Section */}
       <section className="py-16 sm:py-24 bg-secondary">
         <div className="container px-4 md:px-8">
-          <h2 className="text-3xl font-bold text-center font-headline">Why You Should Attend</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
-            Join us for a transformative experience designed to inspire, equip, and connect leaders for greater impact.
-          </p>
+            <AnimatedSection>
+                <h2 className="text-3xl font-bold text-center font-headline">Why You Should Attend</h2>
+                <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
+                    Join us for a transformative experience designed to inspire, equip, and connect leaders for greater impact.
+                </p>
+            </AnimatedSection>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {whyAttend.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="flex items-center justify-center mx-auto h-12 w-12 rounded-full bg-primary text-primary-foreground">
-                  <item.icon className="h-6 w-6" />
-                </div>
-                <p className="mt-4 text-lg font-medium">{item.text}</p>
-              </div>
+               <AnimatedSection key={index} className="[transition-delay:var(--delay)]" style={{ '--delay': `${index * 100}ms` } as React.CSSProperties}>
+                    <div className="text-center">
+                        <div className="flex items-center justify-center mx-auto h-12 w-12 rounded-full bg-primary text-primary-foreground">
+                        <item.icon className="h-6 w-6" />
+                        </div>
+                        <p className="mt-4 text-lg font-medium">{item.text}</p>
+                    </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -130,13 +157,16 @@ export default function HomePage() {
       {/* Special Features Section */}
       <section className="py-16 sm:py-24">
         <div className="container px-4 md:px-8">
-          <h2 className="text-3xl font-bold text-center font-headline">Special Features</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
-            Explore the unique opportunities and ceremonies at this year&apos;s conference.
-          </p>
+           <AnimatedSection>
+                <h2 className="text-3xl font-bold text-center font-headline">Special Features</h2>
+                <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
+                    Explore the unique opportunities and ceremonies at this year&apos;s conference.
+                </p>
+          </AnimatedSection>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <Card key={feature.title} className="overflow-hidden flex flex-col group">
+            {features.map((feature, index) => (
+              <AnimatedSection key={feature.title} className="[transition-delay:var(--delay)]" style={{ '--delay': `${index * 150}ms` } as React.CSSProperties}>
+              <Card className="overflow-hidden flex flex-col group h-full">
                  {feature.images && feature.images.length > 0 && (
                    <Carousel className="w-full relative">
                       <CarouselContent>
@@ -176,6 +206,7 @@ export default function HomePage() {
                     </div>
                 </CardContent>
               </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -184,32 +215,38 @@ export default function HomePage() {
       {/* Partners Section */}
       <section className="py-16 sm:py-24 bg-secondary">
         <div className="container px-4 md:px-8">
-          <h2 className="text-3xl font-bold text-center font-headline">Our Trusted Partners & Sponsors</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
-            We are grateful for the support of our partners who make this event possible.
-          </p>
+            <AnimatedSection>
+                <h2 className="text-3xl font-bold text-center font-headline">Our Trusted Partners & Sponsors</h2>
+                <p className="mt-4 max-w-2xl mx-auto text-center text-muted-foreground">
+                    We are grateful for the support of our partners who make this event possible.
+                </p>
+            </AnimatedSection>
           <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-4 items-center">
-            {partnerLogos.map((logo) => (
-              <div key={logo.id} className="flex flex-col items-center justify-center text-center gap-2">
-                {logo && (
-                  <div className="relative w-32 h-32">
-                    <Image
-                      src={logo.imageUrl}
-                      alt={logo.description}
-                      data-ai-hint={logo.imageHint}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                )}
-                <p className="text-sm font-medium text-muted-foreground">{logo.description}</p>
-              </div>
+            {partnerLogos.map((logo, index) => (
+                <AnimatedSection key={logo.id} className="[transition-delay:var(--delay)]" style={{ '--delay': `${index * 100}ms` } as React.CSSProperties}>
+                    <div className="flex flex-col items-center justify-center text-center gap-2">
+                        {logo && (
+                        <div className="relative w-32 h-32">
+                            <Image
+                            src={logo.imageUrl}
+                            alt={logo.description}
+                            data-ai-hint={logo.imageHint}
+                            fill
+                            className="object-contain"
+                            />
+                        </div>
+                        )}
+                        <p className="text-sm font-medium text-muted-foreground">{logo.description}</p>
+                    </div>
+              </AnimatedSection>
             ))}
           </div>
           <div className="mt-12 text-center">
-            <Button variant="outline" asChild>
-              <Link href="/partners">Become a Partner</Link>
-            </Button>
+             <AnimatedSection>
+                <Button variant="outline" asChild>
+                <Link href="/partners">Become a Partner</Link>
+                </Button>
+            </AnimatedSection>
           </div>
         </div>
       </section>

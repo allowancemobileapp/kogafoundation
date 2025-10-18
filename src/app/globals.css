@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -101,5 +102,9 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .animate-in {
+    animation: fade-in-up 0.8s ease-out forwards;
   }
 }
