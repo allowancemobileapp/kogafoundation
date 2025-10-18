@@ -104,13 +104,13 @@ export default function HomePage() {
               <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-primary-foreground/80">
                 {CONFERENCE_DETAILS.subheadline}
               </p>
-              <div className="mt-6 flex items-center justify-center space-x-2 text-sm font-semibold">
-                <div className="flex items-center space-x-2 rounded-full bg-background/10 px-4 py-2">
+              <div className="mt-6 flex flex-col md:flex-row items-center justify-center gap-2 text-sm font-semibold">
+                <div className="flex items-center gap-2 rounded-full bg-background/10 px-4 py-2">
                   <Calendar className="h-4 w-4" />
                   <span>{CONFERENCE_DETAILS.date} - {CONFERENCE_DETAILS.time}</span>
                 </div>
-                <div className="flex items-center space-x-2 rounded-full bg-background/10 px-4 py-2">
-                  <Milestone className="h-4 w-4" />
+                <div className="flex items-center gap-2 rounded-full bg-background/10 px-4 py-2 text-center">
+                  <Milestone className="h-4 w-4 flex-shrink-0" />
                   <span>{CONFERENCE_DETAILS.venue}</span>
                 </div>
               </div>
