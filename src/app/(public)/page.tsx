@@ -11,6 +11,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
+import { Header } from '@/components/layout/header';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
 const elderImages = PlaceHolderImages.filter(p => p.id.startsWith('elder-induction-'));
@@ -83,7 +84,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] w-full">
+      <section className="relative h-[70vh] min-h-[600px] w-full">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -94,9 +95,9 @@ export default function HomePage() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-primary/80 to-primary/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 to-background/95" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
-          <div className="container px-4 md:px-8">
+          <div className="container px-4 md:px-8 pt-12 sm:pt-0">
              <AnimatedSection>
               <h1 className="text-4xl font-extrabold tracking-tight font-headline md:text-5xl lg:text-6xl">
                 {CONFERENCE_DETAILS.name}
