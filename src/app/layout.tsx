@@ -53,10 +53,17 @@ const eventSchema = {
   },
 };
 
+const logoUrl = 'https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/koga-events/logo.png';
+
 export const metadata: Metadata = {
   title: 'KOGA Faith Foundation — State Conference & Awards (Lagos 2025)',
   description: 'Sensitizing, Mobilizing, Equipping, and Engaging Faith-Based Organizations for Socio-Economic Development',
   metadataBase: new URL('https://www.kogaagencies.org'),
+  icons: {
+    icon: logoUrl,
+    shortcut: logoUrl,
+    apple: logoUrl,
+  },
   openGraph: {
     title: 'KOGA Faith Foundation — State Conference & Awards (Lagos 2025)',
     description: 'Sensitizing, Mobilizing, Equipping, and Engaging Faith-Based Organizations for Socio-Economic Development',
