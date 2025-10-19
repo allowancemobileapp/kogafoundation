@@ -6,6 +6,7 @@ export const CONFERENCE_DETAILS = {
   time: '10:00 AM',
   venue: 'Lagos State Government Secretariat Hall',
   contactPhone: '+234 803 393 1163',
+  contactPhoneUS: '+12407649584',
   contactEmail: 'info@kogaagencies.org',
   domain: 'https://www.kogaagencies.org',
 };

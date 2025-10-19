@@ -23,7 +23,7 @@ const features = [
   {
     title: 'Kingdom Elderstateswomen Hall of Faith Induction',
     description: 'Honoring the matriarchs of faith for their lifelong service.',
-    fee: 'Fee ₦75,000',
+    fee: 'Induction fees 75000 Naira. Covers Membership registration Participation fees, T shirts for pre event Media conference and Induction certificate',
     images: elderImages,
     link: '/elder-induction',
   },
@@ -35,7 +35,7 @@ const features = [
     link: '/nominate',
   },
   {
-    title: 'Defining Ceremony',
+    title: 'WOMEN AGAINST INTRA-RELIGIOUS PERSECUTION',
     description: 'The National Council for Faith-Based Women and Youths Initiatives.',
     fee: 'Included with registration',
     images: ceremonyImages,
@@ -155,7 +155,7 @@ export default function HomePage() {
       </section>
       
       {/* Special Features Section */}
-      <section className="py-16 sm:py-24">
+      <section className="py-16 smpy-24">
         <div className="container px-4 md:px-8">
            <AnimatedSection>
                 <h2 className="text-3xl font-bold text-center font-headline">Special Features</h2>

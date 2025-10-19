@@ -63,6 +63,7 @@ export default function ContactPage() {
             <h3 className="text-lg font-semibold font-headline">Contact Information</h3>
             <div className="mt-4 space-y-2 text-muted-foreground">
               <p className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> {CONFERENCE_DETAILS.contactPhone}</p>
+              <p className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> {CONFERENCE_DETAILS.contactPhoneUS} (WhatsApp only)</p>
               <p className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> {CONFERENCE_DETAILS.contactEmail}</p>
             </div>
           </div>

@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { ArrowRight, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { Logo } from '@/components/logo';
@@ -65,6 +66,7 @@ export function Footer() {
             <div>
                 <h4 className="font-semibold text-foreground">Contact Us</h4>
                 <p>Phone: {CONFERENCE_DETAILS.contactPhone}</p>
+                <p>US (WhatsApp): {CONFERENCE_DETAILS.contactPhoneUS}</p>
                 <p>Email: {CONFERENCE_DETAILS.contactEmail}</p>
             </div>
             <div>
