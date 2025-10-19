@@ -86,7 +86,7 @@ export default function HomePage() {
     <div className="flex flex-col">
       <Header />
       {/* Hero Section */}
-      <section className="relative h-[80vh] min-h-[700px] w-full">
+      <section className="relative h-[110vh] min-h-[850px] w-full">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -97,9 +97,9 @@ export default function HomePage() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/95 to-primary/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/95 to-primary/60" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
-          <div className="container px-4 md:px-8 pt-12 sm:pt-0">
+          <div className="container px-4 md:px-8 pt-24 sm:pt-0">
              <AnimatedSection>
               <h1 className="text-4xl font-extrabold tracking-tight font-headline md:text-5xl lg:text-6xl">
                 {CONFERENCE_DETAILS.name}
