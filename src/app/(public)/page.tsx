@@ -97,7 +97,7 @@ export default function HomePage() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/95 to-primary/60" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
           <div className="container px-4 md:px-8 pt-24 sm:pt-0">
              <AnimatedSection>
